@@ -236,15 +236,19 @@ At last you will see finish, click on finish.
 ## Installing Node.js (version 16)
 
 install curl using below commad
+
     sudo apt install curl
 
 execute the below command to set the nodejs version to 16
+
     sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
 
 install the node.js using the below command
+
     sudo apt install -y nodejs
 
 verify whether it is installed
+
     node -v
 
 output should be similar to 

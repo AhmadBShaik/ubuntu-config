@@ -134,3 +134,122 @@ The installation will begin and it may take 15 to 20 minutes
 
 
 After installation click `restart now` (Make sure to remove the bootable pendrive before restarting)
+
+
+
+
+
+
+
+# Installing Java
+
+paste the command to update and upgrade the system
+
+`sudo apt update -y && sudo apt upgrade -y`
+
+[Download Java 17](https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb)
+
+After Downloading open the terminal using pressing `Ctrl+Alt+T` altogether
+
+type the command to navigate to **Downloads** directory
+`cd Downloads`
+
+you will see the 
+ **jdk-17_linux-x64_bin.deb** file
+
+type the command to install this package
+`sudo dpkg -i jdk-17_linux-x64_bin.deb` (Use the same password, the one we used in user account setup)
+
+<!-- `sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-17/bin/java 1`
+
+`sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-17/bin/javac 1` -->
+
+open new terminal using `Ctrl+Alt+T`  and type the command to verify installation
+
+`java -version`
+
+output should be similar to the below
+
+     java version "17.0.1" 2021-10-19 LTS
+     Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
+     Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
+
+## setting path for java
+
+type the following command
+`ls /usr/lib/jvm/`
+
+You will get output similar to 
+     
+     jdk-17.0.1 (might not be exact in your case)
+
+copy this output
+    
+
+type `sudo gedit /etc/profile` to edit the file with super user privilages
+
+type the following text
+
+**JAVA_HOME=/usr/lib/jvm/(paste the above output)** with no spaces
+
+Save and exit from the file
+
+update the paths using the below command
+
+`source /etc/profile`
+
+verify the change using the below command
+
+`echo $JAVA_HOME`
+the output will be
+
+    JAVA_HOME=/usr/lib/jvm/(the text we pasted)
+
+
+## Installing Android Studio
+
+install snap using the below command
+
+`sudo apt install snapd`
+
+install android studio with snap using below command
+
+`sudo snap install android-studio --classic`
+
+
+after installation 
+
+click `windows key` and type `android studio`, you will android studio application and click on it, it will open
+
+a pop will appear for very first time after installing android studio asking **import settings**
+
+let it be default(do not import) and click **OK**
+
+Now you will see another pop up called **Data Sharing** click on `Don't Send`
+
+Now you will see the window showing different logos (phones, watches, TVs, etc)
+
+let it be default(standard), click on next
+select dark theme(dracula), click on next
+
+Now you will see Verify settings, click on next
+At last you will see finish, click on finish.
+
+## Installing Node.js (version 16)
+
+install curl using below commad
+`sudo apt install curl`
+
+execute the below command to set the nodejs version to 16
+`sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -`
+
+install the node.js using the below command
+`sudo apt install -y nodejs`
+
+verify whether it is installed 
+`node -v`
+
+output should be similar to 
+
+    v16.16.0
+

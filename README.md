@@ -32,7 +32,7 @@
 ## **Installation**
 ### **Burning OS into USB/ Creating bootable USB** 
 0. Install the Rufus and attach the USB to laptop
-1. Select the USB drive attached to your system that you want to use.
+1. Select the USB drive attached to our system that you want to use.
 2. Choose the downloaded ISO file of Jammy JellyFish.
 3. After that simply click on the Start button. For more clear idea see the below screenshot.
 ![](rufus.png)
@@ -64,19 +64,19 @@ Now, You will see a window with two options
 1. Try Ubuntu
 2. Install Ubuntu
 
-Select `Install Ubuntu`
+### Select `Install Ubuntu`
 
-**Language selection**
+### **Language selection**
 
 Select English as default language(English is pre-selected), click next.
 
-**Updates and other software section**
+### **Updates and other software section**
 
 select normal installation 
 select download updates while installing ubuntu(in Other Options)
 select Install third party software for graphics and wifi hardware
 
-**Installation type**
+### **Installation type**
 
 select `something else` option
 
@@ -120,11 +120,11 @@ allocate 15 GB to Swap
 click **Install Now** button
 click `continue` in the dialog box
 
-**Time zone**
+### **Time zone**
 
 select Kolkata as timezone place
 
-**Create User Account**
+### **Create User Account**
 
 fill the form and remember the password(minimum of 8 letters word is preferred)
 
@@ -132,33 +132,29 @@ click `continue`
 
 The installation will begin and it may take 15 to 20 minutes
 
-
 After installation click `restart now` (Make sure to remove the bootable pendrive before restarting)
 
-
-
-
-
-
-
-# Installing Java
+## Installing Java
 
 paste the command to update and upgrade the system
 
-`sudo apt update -y && sudo apt upgrade -y`
+    sudo apt update -y && sudo apt upgrade -y
 
 [Download Java 17](https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb)
 
 After Downloading open the terminal using pressing `Ctrl+Alt+T` altogether
 
 type the command to navigate to **Downloads** directory
-`cd Downloads`
 
-you will see the 
+    cd Downloads
+
+you will see the
  **jdk-17_linux-x64_bin.deb** file
 
 type the command to install this package
-`sudo dpkg -i jdk-17_linux-x64_bin.deb` (Use the same password, the one we used in user account setup)
+
+    sudo dpkg -i jdk-17_linux-x64_bin.deb
+(Use the same password, the one we used in user account setup)
 
 <!-- `sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-17/bin/java 1`
 
@@ -166,27 +162,29 @@ type the command to install this package
 
 open new terminal using `Ctrl+Alt+T`  and type the command to verify installation
 
-`java -version`
+    java -version
 
 output should be similar to the below
 
-     java version "17.0.1" 2021-10-19 LTS
-     Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
-     Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
+` java version "17.0.1" 2021-10-19 LTS
+ Java(TM) SE Runtime Environment (build 17.0.1+12-LTS-39)
+ Java HotSpot(TM) 64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)`
 
 ## setting path for java
 
 type the following command
-`ls /usr/lib/jvm/`
+    
+    ls /usr/lib/jvm/
 
-You will get output similar to 
-     
-     jdk-17.0.1 (might not be exact in your case)
+You will get output similar to
+
+`jdk-17.0.1` (might not be exact in our case)
 
 copy this output
-    
 
-type `sudo gedit /etc/profile` to edit the file with super user privilages
+    sudo gedit /etc/profile
+
+ to edit the file with super user privilages
 
 type the following text
 
@@ -196,28 +194,28 @@ Save and exit from the file
 
 update the paths using the below command
 
-`source /etc/profile`
+    source /etc/profile
 
 verify the change using the below command
 
-`echo $JAVA_HOME`
+    echo $JAVA_HOME
+
 the output will be
 
-    JAVA_HOME=/usr/lib/jvm/(the text we pasted)
+`JAVA_HOME=/usr/lib/jvm/(the text we pasted)`
 
 
 ## Installing Android Studio
 
 install snap using the below command
 
-`sudo apt install snapd`
+    sudo apt install snapd
 
 install android studio with snap using below command
 
-`sudo snap install android-studio --classic`
+    sudo snap install android-studio --classic
 
-
-after installation 
+after installation
 
 click `windows key` and type `android studio`, you will android studio application and click on it, it will open
 
@@ -238,18 +236,17 @@ At last you will see finish, click on finish.
 ## Installing Node.js (version 16)
 
 install curl using below commad
-`sudo apt install curl`
+    sudo apt install curl
 
 execute the below command to set the nodejs version to 16
-`sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -`
+    sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
 
 install the node.js using the below command
-`sudo apt install -y nodejs`
+    sudo apt install -y nodejs
 
-verify whether it is installed 
-`node -v`
+verify whether it is installed
+    node -v
 
 output should be similar to 
 
-    v16.16.0
-
+`v16.16.0`
